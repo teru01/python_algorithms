@@ -1,0 +1,25 @@
+Japanese,Mathematics,History,Science
+71,43,75,68
+69,89,54,77
+89,76,49,98
+79,61,54,83import sys
+input = sys.stdin.readline
+from statistics import mean
+
+def main():
+	header = input().strip()
+	japanese_scores = []
+	math_scores = []
+	history_scores = []
+	science_scores = []
+	for line in input().strip():
+		j, m, h, s = list(map(int, line.split(',')))
+		japanese_scores.append(j)
+		math_scores.append(m)
+		history_scores.append(h)
+		science_scores.append(s)
+
+	print(header)
+	print(','.join(mean(japanese_scores), mean(math_scores), mean(history_scores), mean(science_scores)))
+if __name__ == '__main__':
+	main()

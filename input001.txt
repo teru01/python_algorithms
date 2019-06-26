@@ -1,0 +1,5 @@
+Japanese,Mathematics,History,Science
+71,43,75,68
+69,89,54,77
+89,76,49,98
+79,61,54,83
