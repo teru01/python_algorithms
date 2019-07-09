@@ -4,17 +4,18 @@ input = sys.stdin.readline
 def main():
 	s = input().strip()
 	t = input().strip()
-	l = {chr(c): chr(c) for c in range(ord('a'), ord('z')+1)}
-	for i, c in enumerate(s):
-		if l[c] != c and (l[c] != t[i] or l[t[i]] != c):
-			print('No')
-			return
-		l[c] = t[i]
-		l[t[i]] = c
+	l = [-1] * 26
+	k = [-1] * 26
+	a = ord('a')
+	for i in range(len(s)):
+		if l[ord(s[i]) - a] != -1 or k[ord(t[i]) - a] != -1:
+			if l[ord(s[i]) - a] != t[i] or k[ord(t[i]) - a] != s[i]:
+				print('No')
+				return
+		l[ord(s[i]) - a] = t[i]
+		k[ord(t[i]) - a] = s[i]
 	print('Yes')
-	for c in l.items():
-		print(c, end='')
-	print('')
+
 
 if __name__ == '__main__':
 	main()
