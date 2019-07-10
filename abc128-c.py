@@ -9,11 +9,11 @@ def rec(l, n):
 	global count
 	if len(l) == n:
 		c = 0
+		st = set()
+		for i in range(n):
+			if l[i] == 1:
+				st.add(i + 1)
 		for k, sw in enumerate(v):
-			st = set()
-			for i in range(n):
-				if l[i] == 1:
-					st.add(i + 1)
 			# print(st)
 			if len(sw.intersection(st)) % 2 != p[k]:
 				return
