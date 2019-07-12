@@ -13,9 +13,7 @@ def main():
 	pl = list(map(int, input().strip().split()))
 	p = 0
 	for i, e in enumerate(pl):
-		p = p << 1
-		p += e
-
+		p |= e << i
 	j = 0
 	ans = 0
 	while j < (1 << n):
