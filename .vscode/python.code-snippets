@@ -31,5 +31,25 @@
 			"\tmain()",
 		],
 		"description": "python"
+	},
+	"minit": {
+		"scope": "python",
+		"prefix": "minit",
+		"body": [
+			"import sys",
+			"input = sys.stdin.readline",
+			"",
+			"def main():",
+			"\tn, m = map(int, input().strip().split())",
+			"\ts = [[] for _ in range(m)]",
+			"\tfor i in range(m):",
+			"\t\ts[i] = list(map(int, input().strip().split()))",
+			"\t$1",
+			"",
+			"if __name__ == '__main__':",
+			"\tmain()",
+		],
+		"description": "python"
 	}
 }
+
