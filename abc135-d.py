@@ -2,8 +2,7 @@ import sys
 input = sys.stdin.readline
 
 def main():
-	n = int(input().strip())
-	v = list(map(int, input().strip().split()))
+	s = input().strip()
 	
 
 if __name__ == '__main__':
