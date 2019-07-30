@@ -22,10 +22,10 @@ def main():
 			if color[i] != BLACK and d[i] < mincost:
 				mincost = d[i]
 				u = i
-		
+
 		if mincost == INF:
 			break
-		
+
 		color[u] = BLACK
 
 		for v in range(m):
@@ -33,12 +33,11 @@ def main():
 				if s[u][v] < d[v]:
 					d[v] = s[u][v]
 					p[v] = u
-					color[v] = GRAY
+					# color[v] = GRAY
 	ans = 0
 	for i in range(1, m):
 		ans += s[i][p[i]]
 	print(ans)
-
 
 if __name__ == '__main__':
 	main()
