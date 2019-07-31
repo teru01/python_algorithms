@@ -20,7 +20,14 @@ def main():
 	d[0] = 0
 	# for i in range(m):
 	# 	print(s[i])
+	color[0] = BLACK
+	u = 0
 	while True:
+		for i in range(m):
+			if color[i] != BLACK and s[u][i] != -1:
+				if d[u] + s[u][i] < d[i]:
+					d[i] = d[u] + s[u][i]
+					p[i] = u
 		mincost = INF
 		for i in range(m):
 			if color[i] != BLACK and d[i] < mincost:
@@ -29,12 +36,6 @@ def main():
 		if mincost == INF:
 			break
 		color[u] = BLACK
-		for i in range(m):
-			if color[i] != BLACK and s[u][i] != -1:
-				if d[u] + s[u][i] < d[i]:
-					d[i] = d[u] + s[u][i]
-					p[i] = u
-					# color[i] = GRAY
 	for i in range(m):
 		print("{} {}".format(i, d[i]))
 

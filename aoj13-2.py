@@ -15,8 +15,16 @@ def main():
 	color = [WHITE] * m
 	p = [-1] * m
 	d[0] = 0
-	u = None
+	u = 0
+	color[0] = BLACK
+	# 周囲を探索→移動の流れを1ループにした
 	while True:
+		for v in range(m):
+			if color[v] != BLACK and s[u][v] != -1:
+				if s[u][v] < d[v]:
+					d[v] = s[u][v]
+					p[v] = u
+		
 		mincost = INF
 		for i in range(m):
 			if color[i] != BLACK and d[i] < mincost:
@@ -28,11 +36,6 @@ def main():
 
 		color[u] = BLACK
 
-		for v in range(m):
-			if color[v] != BLACK and s[u][v] != -1:
-				if s[u][v] < d[v]:
-					d[v] = s[u][v]
-					p[v] = u
 					# color[v] = GRAY
 	ans = 0
 	for i in range(1, m):
