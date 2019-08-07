@@ -8,17 +8,21 @@ def main():
 	h = [0] * n
 	for i in range(n):
 		x[i], y[i], h[i] = map(int, input().strip().split())
-	for s in range(10):
-		for t in range(10):
+	for s in range(W):
+		for t in range(W):
+			gr = set()
 			for i in range(n):
-				gr = set()
-				gr.add(h[i] - abs(x[i]-s)-abs(y[i]-t))
-		if len(gr) == 1:
-			h = gr.pop()
-			if h >= 0:
-				print(s, t, h)
-				return
+				if h[i] != 0:
+					H = h[i] + abs(x[i]-s) + abs(y[i]-t)
+					gr.add(H)
+			for i in range(n):
+				if h[i] == 0:
+					gr = {k for k in gr if k <= abs(x[i]-s) + abs(y[i]-t)}
 
+			if len(gr) == 1:
+				u = gr.pop()
+				print(s, t, u)
+				# return
 
 if __name__ == '__main__':
 	main()

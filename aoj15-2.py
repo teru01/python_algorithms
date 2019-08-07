@@ -18,7 +18,6 @@ def dfs(elm):
 			dfs(i)
 	ans.appendleft(elm)
 
-
 def main():
 	global M, v, e, ans, color
 	v, e = map(int, input().strip().split())
