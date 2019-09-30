@@ -21,7 +21,8 @@
 		"body": [
 			"import sys",
 			"input = sys.stdin.readline",
-			"from operator import itemgetter",
+            "from operator import itemgetter",
+            "sys.setrecursionlimit(10000000)",
 			"",
 			"def main():",
 			"\tn = int(input().strip())",

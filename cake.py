@@ -18,8 +18,10 @@ def main():
         percent = c / n * 100
         graph = "*" * int(percent)
         print("{:2d}% <= {} ({:.2f}%)".format((9 - i) * 10, graph, percent))
+
     print("avr: {:.2f}".format(avr / n))
 
 
 if __name__ == '__main__':
     main()
+
