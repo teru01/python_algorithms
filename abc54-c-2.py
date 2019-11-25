@@ -11,7 +11,7 @@ def main():
         a, b = list(map(lambda x: x-1, map(int, input().strip().split())))
         lis[a].append(b)
         lis[b].append(a)
-    
+
     ans = 0
     for path in itertools.permutations(range(n), n):
         if path[0] != 0:
