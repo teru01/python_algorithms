@@ -7,13 +7,11 @@ INF = 10**30
 def main():
     a, b, x = list(map(int, input().strip().split()))
     ans = 0
-    for d in range(1, 20):
+    limit = 1
+    for d in range(1, 11):
+        limit *= 10
         n = (x - b*d) // a
-        if n < 0:
-            continue
-        if len(str(n)) == d:
-            ans = max(ans, n)
-            print("d:", d)
+        ans = max(ans, min(limit - 1, n))
     print(min(ans, 10**9))
 
 if __name__ == '__main__':

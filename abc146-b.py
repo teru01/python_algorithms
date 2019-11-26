@@ -8,11 +8,12 @@ import string
 def main():
     n = int(input().strip())
     v = input().strip()
-    newv = [0] * (len(v))
-    al = string.ascii_uppercase
-    for i, c in enumerate(v):
-        newv[i] = al[(al.index(c) + n) % len(al)]
-    print("".join(newv))
+    s = ''
+    for c in v:
+        ind = ord(c) - ord('A') + n
+        ind %= 26
+        s += chr(ord('A') + ind)
+    print(s)
 
 if __name__ == '__main__':
     main()
