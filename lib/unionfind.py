@@ -21,20 +21,20 @@ class UnionFind:
 		else:
 			self.parent[xroot] = yroot
 			self.rank[yroot] += 1
-			# node = y
-			# while True:
-			# 	self.rank[node] += 1
-			# 	if self.parent[node] == node:
-			# 		break
-			# 	node = self.parent[node]
-			# self.rank[y] += 1
+			node = y
+			while True:
+				self.rank[node] += 1
+				if self.parent[node] == node:
+					break
+				node = self.parent[node]
+			self.rank[y] += 1
 
 	def findset(self, x):
 		if self.parent[x] == x:
 			return x
 		else:
 			root = self.findset(self.parent[x])
-			# self.parent[x] = root
+			self.parent[x] = root
 			return root
 
 def main():
