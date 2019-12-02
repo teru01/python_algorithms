@@ -15,7 +15,7 @@ def main():
             if j - items[i][1] < 0:
                 dp[i][j] = dp[i-1][j]
             else:
-                dp[i][j] = max(dp[i][j-items[i][1]]+items[i][0], dp[i-1][j])
+                dp[i][j] = max(dp[i-1][j-items[i][1]]+items[i][0], dp[i-1][j])
     print(dp[n][W])
 
 if __name__ == '__main__':
