@@ -11,19 +11,11 @@ def distance(i, j):
 def main():
 	n = int(input().strip())
 	v = sorted(list(map(int, input().strip().split())))
-	t = [0] * n
-
+	t = [0] * 24
 	for i in range(n):
-		d = v[i]
-		if i % 2 == 0:
-			t[i] = d
-		else:
-			t[i] = 24 - d
-	cmin = min(v) #chokudaiとの時差
-	for z in combinations(range(n), 2):
-		i, j = z[0], z[1]
-		cmin = min(cmin, distance(t[i], t[j]))
-	print(cmin)
+		if t[v[i]] == 1:
+			t[24 - v[i]] += 1
+		t[v[i]] = i
 
 if __name__ == '__main__':
 	main()
