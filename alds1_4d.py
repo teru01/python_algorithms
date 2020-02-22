@@ -29,7 +29,7 @@ def main():
     while l +1 < r:
         mid = (l + r) // 2
         ntr = n_load(mid, k, n, w)
-        print('ntr: ', ntr, l, r)
+        # print('ntr: ', ntr, l, r)
         if ntr == n:
             r = mid
         else:
